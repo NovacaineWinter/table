@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'fname','lname', 'email', 'password','role_id',
     ];
 
     /**
@@ -26,4 +26,32 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    
+
+    public function role(){
+        return $this->belongsTo('App\role','role_id');
+    }    
+
+    public function bookings(){
+        return $this->belongsToMany('App\booking', 'users_bookings', 'user_id', 'booking_id');
+    }    
+
+    public function updateProfilePic($file){
+            //only deals with saving a large form of the user's profile pic - Will sort out thumbnails at some point
+        $this->img_raw = $request->file('input_img')->store('public');
+        $this->save();
+    }
+
+    public function profileThumb(){
+        return url($this->img_raw);
+    }
+
+    public function profileMedium(){
+        return url($this->img_raw);
+    }
+
+    public function hasErrors(){
+        return false;
+    }
 }

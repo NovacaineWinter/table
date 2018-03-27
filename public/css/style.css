@@ -1,0 +1,279 @@
+body{
+	margin:0px;
+}
+
+body{
+	background-color:#1e1e1e;
+	color:#fdfdfd;	
+	font-family: 'Raleway', sans-serif;
+}
+
+#app{
+	width:100vw;
+	height:100vh;
+	overflow:hidden;
+	position:fixed;
+}
+
+.hidden{
+	display:none;
+}
+
+#modal{
+	position:fixed;
+	/* overflow-y:scroll; */
+	width:80vw;
+	height:70vh;
+	top:15vh;
+	margin:auto;
+	left:10vw;
+	background-color:#1e1e1e;
+	/*display:none;*/
+	color:#fdfdfd;
+	border:1px solid #fdfdfd;
+	z-index:3;
+}
+
+#blankout{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #fdfdfd;
+    opacity: 0.4;
+    z-index: 2;
+    /*display: none;*/
+}
+
+.modalTitleHolder{
+    width: 50%;
+    margin: auto;
+    text-align: center;   
+}
+
+#modal h2{
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #e8e8e8; 
+    text-align: center;
+}
+
+#closeModalButton{
+	position: absolute;
+    font-size: 55px;
+    cursor: pointer;
+    right: 1vw;
+    top: -3px;
+}
+
+.modalHeader{
+    width: 100%;
+    height: 5vh;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#modalContainer{
+    width: 100%;
+    height: 63vh;
+    box-sizing: border-box;
+    padding: 1.5vw 0.5vw;
+}
+
+#modalPopover{
+	position:fixed;
+	width:40vw;
+	left:30vw;
+	height:40vh;
+	top:30vh;
+	background-color:#1e1e1e;
+	border:1px solid #e8e8e8;
+	z-index: 5;
+	/*display: none;*/
+}
+
+#modalBlankout{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #fdfdfd;
+    opacity: 0.4;
+    z-index: 4;
+   /*	display: none;*/
+}
+
+
+
+/* Scrollbar stuff */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+
+
+.action{
+	cursor:pointer;
+}
+.btn{
+	padding: 1vw;
+    border: 1px solid #e8e8e8;
+    width: fit-content;
+    float: left;
+    margin: 0.5vw 1.5vw;
+    text-transform: uppercase;
+    text-align: center;
+    cursor:pointer;
+}
+
+.userThumb{
+	width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+}
+.userPicEnlarged{
+	width:100px;
+	height:100px;
+    background-position: center;
+    background-size: cover;	
+    display:none;
+    z-index: 10;
+}
+
+#memberTable{
+	border:1px solid #e8e8e8;
+}
+#memberTable td,#memberTable th{
+	border-bottom:1px solid #e8e8e8;
+}
+
+
+
+.halfwidth{
+    width: 49%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding: 1.5vw;    
+}
+
+.lefthalfwidth{
+	border-right:1px solid #e8e8e8;
+}
+
+.occupiedTable{
+	background-color: #ffdfba;
+}
+
+
+.englishPoolAvailable{background-color:#baffc9;}
+.americanPoolAvailable{background-color:#bae1ff;}
+.snookerPoolAvailable{background-color:#ffffba;}
+.specialityAvailable{background-color:#fafafa;}
+.tablePaused{background-color: #ffb3ba;}
+
+
+
+.equalwidth{
+	display:inline-block;
+	float:left;	
+	height: 100vh;
+    border-right: 1px solid #5a666b;	
+}
+
+.equalwidth h1{
+	text-transform: uppercase;
+}
+
+.equalwidth h4, .equalwidth h1{
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight:300;	
+}
+
+.tableRow{
+	box-sizing: border-box;
+	padding:0px 0.5vw;
+	margin:1vw;
+	height:80px;
+	cursor:pointer;
+	color:#142634;
+	/*color:#1e1e1e;*/
+	/*border:1px solid #7e8889;*/
+	border:1px solid #BDC7C1;
+	font-size:1vw;
+}
+
+.tableNumber{
+	width:6%;
+	display:inline-block;
+	float:left;
+	padding-left:0.5vw;
+}
+
+.tableInfo{
+	float:left;
+	border-left:1px solid #1e1e1e;
+	width:88%;
+	box-sizing: border-box;
+	padding-left:1vw;
+	display: inline-block;
+	height:100%;
+}
+
+.tableRowItem{
+	float:left;
+	padding:0px 4px;
+}
+.tableName{
+	float:left;
+}
+
+.tableOdometer{
+	float:left;
+}
+
+.tableTimer{
+	float:left;
+	padding:0px 0.5vw;
+}
+.tableCost{
+	float:left;
+	padding:0px 0.5vw;
+}
+.usersOnTable{
+	float:left;
+	margin:0px 1vw;
+}
+
+
+.occupiedContainer{
+    height: 40vh;
+    overflow-y: auto;
+}
+
+.availableContainer{
+    height: 36vh;
+    overflow-y: auto;
+}
+
+.availableBorder{
+    border-bottom: 1px solid #e8e8e8;
+    width:80%;
+    margin:5px auto;
+}

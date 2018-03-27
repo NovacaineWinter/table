@@ -26,3 +26,5 @@ Route::get('/ajax', 'tableController@ajax');
 Route::get('/SignUpUser','registerController@signUp');
 
 Route::post('/recieve','registerController@receive');
+
+Route::get('/search','memberController@search');

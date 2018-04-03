@@ -3,22 +3,23 @@
 			<tr>
 				<th><!-- img --></th>
 				<th>Name</th>
-				<th>Membership</th>
-				<th>Notes</th>
+				<th>Address</th>
+				<th>Postcode</th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 
 		@foreach($data['users'] as $user)	
-			<tr>
+			<tr id="rowSearchResultForMember{{{$user->id}}}"
+				@if($user->currently_playing) class="memberPlaying" @endif >
 				<td class="userThumb" target="{{{ $user->id }}}" style="background-image:url('{{{ $user->profileThumb() }}}');">
-					<div id="enlargedProfilePic1" class="userPicEnlarged" style="background-image:url('{{{ $user->profileMedium() }}}');"></div>
+					<!--<div id="enlargedProfilePic{{{ $user->id }}}" class="userPicEnlarged" style="background-image:url('{{{ $user->profileMedium() }}}');"></div>-->
 				</td>
 
 				<td>{{{substr($user->fname.' '.$user->lname,0,13)}}}</td>
-				<td>301 Days left</td>
-				<td>No ID Card</td>
+				<td>{{{substr($user->addr_line_one.' '.$user->addr_line_two,0,15)}}}</td>
+				<td>{{{$user->postcode}}}</td>
 				@if($user->hasErrors())
 					<td class="errorInAddingUserToTable action" targetTable="{{{ $data['target']->id }}}" targetUser="{{{ $user->id }}}">Add To Table</td>
 				@else

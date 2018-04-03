@@ -21,7 +21,7 @@ function completeJS(){
 
 
     var searchTimeout;
-    $('#seachBox').on('keyup',function() {
+    $('#searchBox').on('keyup',function() {
 
     	if(searchTimeout){
     		clearTimeout(searchTimeout);
@@ -33,8 +33,8 @@ function completeJS(){
 				url: url('/search'),
 				method: 'GET',
 				data:{
-					target: $(this).attr('target'),
-					term: $('#seachBox').val(),
+					target: $('#searchBox').attr('target'),
+					term: $('#searchBox').val(),
 				},
 
 				success: function(response) {
@@ -47,7 +47,7 @@ function completeJS(){
 				    console.dir(response);
 				}
 			}); 
-    	},400);
+    	},600);
     });    
 
 
@@ -231,6 +231,24 @@ function completeJS(){
     });
 
 
+
+	$('.userThumb').off().click(function() {
+		$.ajax({
+			url: url('/members/profile-picture'),
+			method: 'GET',
+			data:{
+				target: $(this).attr('target'),
+			},
+			success: function(response) {
+				openPopover(response);
+			},
+			error: function(response) {
+			    console.log('There was an error - it was:');
+			    console.dir(response);
+			}
+		}); 
+	});
+/*
 	$('.userThumb').off().click(function() {
 		$('#enlargedProfilePic'+$(this).attr('target')).show(300);
 	});
@@ -239,7 +257,7 @@ function completeJS(){
 		e.stopPropagation();
 		$('.userPicEnlarged').hide(300);
 	});
-
+*/
 }//<-----
 /* =================================================================================================================================*/
 /* ====================================       End of CompleteJS()     ==============================================================*/

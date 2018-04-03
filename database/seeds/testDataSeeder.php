@@ -21,6 +21,12 @@ class testDataSeeder extends Seeder
             'password'  =>  hash::make('123'),
             'role_id'   =>  2,
             'img_raw'   =>  '/img/defaultUserImg.png',
+            'phone'        =>   '01509 854451',
+            'addr_line_one'=>   'The Hayloft, Town End Court',
+            'addr_line_two'=>   'Main Street',
+            'town'         =>   'West Leake',
+            'county'       =>   'Nottinghamshire',
+            'postcode'      =>  'LE125RF',
         ]);
         App\User::create([
             'fname'     =>  'Ben',
@@ -29,6 +35,12 @@ class testDataSeeder extends Seeder
             'password'  =>  hash::make('123'),
             'role_id'   =>  2,
             'img_raw'   =>  '/img/defaultUserImg.png',
+            'phone'        =>   '07871355451',
+            'addr_line_one'=>   '13 Swan Street,',
+            'addr_line_two'=>   '',
+            'town'         =>   'Loughborough',
+            'county'       =>   'Leicestershire',
+            'postcode'      =>  'LE115FS',
         ]);
         App\User::create([
             'fname'     =>  'Andy',
@@ -37,6 +49,12 @@ class testDataSeeder extends Seeder
             'password'  =>  hash::make('123'),
             'role_id'   =>  2,
             'img_raw'   =>  '/img/defaultUserImg.png',
+            'phone'        =>   '07891234451',
+            'addr_line_one'=>   'Moseley Farm House,',
+            'addr_line_two'=>   'Hopton',
+            'town'         =>   'Stafford',
+            'county'       =>   'Staffordshireshire',
+            'postcode'      =>  'ST170EQ',
         ]);
 
 
@@ -113,7 +131,7 @@ class testDataSeeder extends Seeder
     	$tables[] = array(
     		'number'	=>10,
     		'type_id'	=>$speciality->id,
-    		'name'		=>'Chineese Pool',
+    		'name'		=>'Chinese Pool',
     	);
     	
     	$tables[] = array(

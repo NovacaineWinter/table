@@ -1,0 +1,13 @@
+body{
+	margin:0px;
+}
+
+body{
+	background-color:#1e1e1e;
+	color:#fdfdfd;	
+	font-family: 'Raleway', sans-serif;
+}
+
+.toReveal{
+	display:none;
+}

@@ -11,13 +11,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Krona+One|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     
-    <title>Table Management</title>
+    <title>Sign Up | Table Management</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dataView.css') }}" rel="stylesheet">
+
     
 </head>
 
@@ -29,14 +31,17 @@
         <div id="modalPopover" class="uiPop hidden"></div>
         <div id="modalBlankout" class="uiBlank hidden"></div>
         <div id="appContent">
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-   
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="{{ asset('js/terminal.js') }}"></script>
+    <script src="https://getaddress.io/js/jquery.getAddress-2.0.7.min.js"></script>
+    
+    <script src="{{ asset('js/dataView.js') }}"></script>
 </body>
 </html>

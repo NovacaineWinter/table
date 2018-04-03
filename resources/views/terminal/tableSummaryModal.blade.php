@@ -1,5 +1,6 @@
 @extends('layouts.modalLayout')
 
+
 @section('headerContent')
 	<div class="modalTitleHolder">
         <h2 class="modalTitle">Table {{{ $data['target']->number.' - '}}}{{$data['target']->name? $data['target']->name : $data['target']->type->name}}</h2>
@@ -10,9 +11,16 @@
 
 
 @section('lefthalf')
-	<h2>Search</h2>
+	<h3>Search</h3>
 	<div id="searchRow">
-		Search for Member:<input type="textbox" placeholder="Search..." id="seachBox" target="{{{ $data['target']->id }}}">    		
+
+			<div class="col35">
+				<p>Search for Member:</p>
+			</div>
+			<div class="col65">
+				<input type="textbox" placeholder="Search..." id="searchBox" target="{{{ $data['target']->id }}}">
+			</div>
+  		
 	</div>
 	<div id="memberSearchResults">
 		@include('terminal.modal.memberSearchResults',['data'=>$data])
@@ -23,7 +31,7 @@
 @endsection
 
 @section('righthalf')
-	<h2>On Table</h2>
+	<h3>On Table</h3>
 	<div id="membersOnTable">
 
 		<table id="tableOfMembersOnTable">

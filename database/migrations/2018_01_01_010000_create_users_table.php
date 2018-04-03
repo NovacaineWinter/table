@@ -21,6 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('role_id');
             $table->string('img_raw')->default('/img/defaultUserImg.png');
+            $table->string('addr_line_one',500);
+            $table->string('addr_line_two',500);
+            $table->string('town',500);
+            $table->string('county',50);
+            $table->string('postcode',50);
+            $table->string('phone',20);
+            $table->boolean('currently_playing')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

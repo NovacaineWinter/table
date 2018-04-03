@@ -28,3 +28,8 @@ Route::get('/SignUpUser','registerController@signUp');
 Route::post('/recieve','registerController@receive');
 
 Route::get('/search','memberController@search');
+Route::get('/search/postcode/{postcodeForLookup}','memberController@addressLookup');
+
+
+Route::get('/members/profile-picture','memberController@enlargedProfilePic');
+

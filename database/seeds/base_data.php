@@ -51,12 +51,18 @@ class base_data extends Seeder
         ]);
 
         $admin = App\User::create([
-            'fname' 		=> 	'Admin',
-            'lname' 		=> 	'User',
-            'email' 	=> 	'admin@gmail.com',
-            'password' 	=>	hash::make('123'),
-            'role_id'	=>	$adminRole->id,
-            'img_raw'	=>	'/img/defaultUserImg.png',
+            'fname' 	   => 	'Admin',
+            'lname' 	   => 	'User',
+            'email' 	   => 	'admin@gmail.com',
+            'password' 	   =>	hash::make('123'),
+            'role_id'	   =>	$adminRole->id,
+            'img_raw'	   =>	'/img/defaultUserImg.png',
+            'phone'        =>   '07415863650',
+            'addr_line_one'=>   '2 Imperial Court,',
+            'addr_line_two'=>   'Mill Lane',
+            'town'         =>   'kegworth',
+            'county'       =>   'Leicestershire',
+            'postcode'      =>  'DE742AL',
         ]);
     }
 }

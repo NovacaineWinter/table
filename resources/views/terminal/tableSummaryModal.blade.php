@@ -18,7 +18,7 @@
 				<p>Search for Member:</p>
 			</div>
 			<div class="col65">
-				<input type="textbox" placeholder="Search..." id="searchBox" target="{{{ $data['target']->id }}}">
+				<input type="textbox" placeholder="Search..." v-model="searchTerm" @keyup="alert('hi');" target="{{{ $data['target']->id }}}">
 			</div>
   		
 	</div>

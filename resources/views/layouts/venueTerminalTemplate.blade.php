@@ -24,7 +24,32 @@
 
 <body>
     <div id="app">
-        <div id="modal" class="uiPop hidden"></div>
+
+        <div  id="modal" v-if="displayTableSummary">
+
+            <h3>Search</h3>
+            <div id="searchRow">
+
+                    <div class="col35">
+                        <p>Search for Member:</p>
+                    </div>
+                    <div class="col65">
+                        <input type="textbox" placeholder="Search..." v-model="searchTerm" @keyUp="filterMembers">
+                    </div>
+
+                    <search-results v-bind:memberstodisplay="membersToDisplay"></search-results>
+        
+            </div>
+        </div>
+
+
+        <div class="uiPop hidden">
+
+
+            
+
+
+        </div>
         <div id="blankout" class="uiBlank hidden"></div>
         <div id="modalPopover" class="uiPop hidden"></div>
         <div id="modalBlankout" class="uiBlank hidden"></div>
@@ -36,7 +61,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
    
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="{{ asset('js/terminal.js') }}"></script>
 </body>
 </html>

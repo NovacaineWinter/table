@@ -5,6 +5,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import axios from 'axios';
+import $ from "jquery";
+/*require('jquery-ui');*/
+
+// import '/bulma/css/bulma.css';
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -15,8 +20,42 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
+
+Vue.component('member-row', require('./components/memberSearchRow.vue'));
+
+Vue.component('search-results', require('./components/searchResults.vue'));
+
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    data: {
+    	members: [],
+    	searchTerm: '',
+    	membersToDisplay: [],
+    	displayTableSummary: true,
+    },
+    mounted: function() {
+    	axios.get('/search/members/all')
+
+    	.then(function (response){
+    		app.members = response.data;
+    		app.membersToDisplay = response.data;
+    	})
+
+    	.catch(function (error){
+    		console.log(error);
+    	})
+    },
+    methods:{
+    	filterMembers: function() {
+    		app.membersToDisplay = app.members.filter(function(member) {
+			  return member.fname == 'Matt';
+			});
+			
+    	}
+    }
+
+
 });

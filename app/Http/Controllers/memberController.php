@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class memberController extends Controller
 {
     public function search(Request $request){
+
         if($request->has('target')){
         	if($request->has('term') && $request->get('term')!='' && $request->get('term')!=null){
 
@@ -41,7 +42,8 @@ class memberController extends Controller
         		$data['target']=\App\table::find($request->get('target'));
         		$data['users'] = $users;
 
-        		return view('terminal.modal.memberSearchResults')->with('data',$data);
+                return $data;
+        		/*return view('terminal.modal.memberSearchResults')->with('data',$data);*/
         	}else{
         		$users = \App\User::all()->sortByDesc('created_at');
 
@@ -53,12 +55,20 @@ class memberController extends Controller
         		}
         			$data['target']=\App\table::find($request->get('target'));
         			$data['users'] = $users;
-        		return view('terminal.modal.memberSearchResults')->with('data',$data);
+
+                  return $data;  
+        		/*return view('terminal.modal.memberSearchResults')->with('data',$data);*/
         	}
         }else{
             return 'Cannot process request - table info not provided';
         }
 
+    }
+
+
+
+    public function all() {
+        return \App\User::all();
     }
 
 
@@ -70,10 +80,6 @@ class memberController extends Controller
             return 'Oops - Could not find member';
         }
     }
-
-
-
-
 
 
 
